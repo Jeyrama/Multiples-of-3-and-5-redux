@@ -41,3 +41,22 @@ function gauss(n) {
 }
 
 // or
+
+function solution(number){
+  let sumThree = 0, sumFive = 0;
+  
+  //Calculate the 3 multiples first, avoiding the common 5 multiples 
+  for (let index = 3; index < number; index += 3) {
+    if (index % 5 !== 0) {
+      sumThree += index;
+    }
+  }
+  
+  //Calculate the 5 multiples 
+  for (let index = 5; index < number; index += 5) {
+    sumFive += index;
+  }
+  
+  //For restriction of MAX_SAFE_INTEGER make float parsing. Nice one here
+  return parseFloat(sumThree) + parseFloat(sumFive);
+}
