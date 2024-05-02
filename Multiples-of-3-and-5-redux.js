@@ -27,3 +27,15 @@ Examples:
 
 
 // Solution
+
+function solution(number) {
+  let n3  = (number - 1) / 3 | 0
+  let n5  = (number - 1) / 5 | 0
+  let n15 = (number - 1) / 15 | 0
+  
+  return gauss(n3) * 3 + gauss(n5) * 5 - gauss(n15) * 15
+}
+
+function gauss(n) {
+  return n * (n + 1) / 2
+}
